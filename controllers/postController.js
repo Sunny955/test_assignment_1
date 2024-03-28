@@ -128,7 +128,7 @@ exports.addImage = async (req, res) => {
   try {
     // Upload image to S3
     const params = {
-      Bucket: "postblogimages",
+      Bucket: process.env.BUCKET,
       Key: `${postId}/${file.originalname}`,
       Body: file.buffer,
     };
